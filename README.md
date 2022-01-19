@@ -18,7 +18,12 @@
     pip install pylsl
     ```<br>
     You can have cmd screen by typing "cmd" in windows search<br>
-     Or execute[install_python_library.bat](https://github.com/catagain/Real-time-Brainwave-Car-Controller/blob/main/install_python_library.bat)  file.
-    
+     Or execute [install_python_library.bat](https://github.com/catagain/Real-time-Brainwave-Car-Controller/blob/main/install_python_library.bat)  file.
+   
+  6. file description<br>
+    - alpha_wave_bandpower.xml: code for openvibe
+    - install_python_library.bat: install python library 
+    - mind_controlled_car.py: collect data from openvibe and send commend to car
+    - test_car.py: just for testing, you can use key board to test your car functionality
     
 ## 
