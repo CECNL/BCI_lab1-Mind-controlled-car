@@ -18,8 +18,6 @@ streams = resolve_stream('name', 'OpenViBE Stream1')
 inlet = StreamInlet(streams[0])
 
 
-
-takeOffOrNot = 0
 while True:
     # get a new sample (you can also omit the timestamp part if you're not
     # interested in it)
