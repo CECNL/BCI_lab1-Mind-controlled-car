@@ -21,9 +21,9 @@
      Or execute [install_python_library.bat](https://github.com/catagain/Real-time-Brainwave-Car-Controller/blob/main/install_python_library.bat)  file.
    
   6. file description<br>
-    - alpha_wave_bandpower.xml: code for openvibe
-    - install_python_library.bat: install python library 
-    - mind_controlled_car.py: collect data from openvibe and send commend to car
-    - test_car.py: just for testing, you can use key board to test your car functionality
+    - alpha_wave_bandpower.xml: code for openvibe<br>
+    - install_python_library.bat: install python library <br>
+    - mind_controlled_car.py: collect data from openvibe and send commend to car<br>
+    - test_car.py: just for testing, you can use key board to test your car functionality<br>
     
 ## 
