@@ -13,6 +13,9 @@
     - [Link](http://openvibe.inria.fr/downloads/)
   
   5. python Library installation<br>
+    ```sh
+    pip install -r requirements.txt
+    ```
      Type the following command in cmd<br>
     ```
     pip install pylsl
