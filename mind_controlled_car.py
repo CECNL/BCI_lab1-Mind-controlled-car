@@ -3,7 +3,7 @@ from pylsl import StreamInlet, resolve_stream
 import serial
 import time
 
-#### port"COM5"  must be change to suitable port
+#### Must be change to suitable port [Bluetooth Outgoing]
 ser = serial.Serial("COM4", 9600, timeout = 1)
 
 
@@ -28,7 +28,7 @@ inlet = StreamInlet(streams[0])
 while True:
     # get a new sample (you can also omit the timestamp part if you're not
     # interested in it)
-    time.sleep(0.1)
+    time.sleep(0.2)
     sample, timestamp = inlet.pull_chunk() 
     if timestamp:
 #         print(sample[0][0])
