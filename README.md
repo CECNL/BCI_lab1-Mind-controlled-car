@@ -14,9 +14,7 @@
   
   5. python Library installation<br>
   
-    ```sh
-    pip install -r requirements.txt
-    ```
+    ```pip install -r requirements.txt```<br>
     
      Type the following command in cmd<br>
     ```
