@@ -1,32 +1,29 @@
 # Real-time-Brainwave-Car-Controller
 
 ## working environment
-  1. computer with windows OS(cygnus can only be run on windows OS)
-  2. cygnus<br>
-    - [Link](https://drive.google.com/file/d/1sH7X4EFP8hUWEHtPcJr0E_8npi1PI3sR/view)
-  3. python 3<br>
-    - [Link](https://www.python.org/downloads/)<br>
-    - when installing python, remember to select the enable path option<br>
-    ![image](python_install.png) <br>
-    - Please install python first as much as possible, because python have many installed tool and library like pip。
-  4. openvibe<br>
-    - [Link](http://openvibe.inria.fr/downloads/)
+
+1. computer with windows OS(cygnus can only be run on windows OS)
+
+2. [cygnus](https://drive.google.com/file/d/1sH7X4EFP8hUWEHtPcJr0E_8npi1PI3sR/view)
+
+
+3. [Python3](https://www.python.org/downloads/)
+  - when installing python, remember to select the enable path option
+  ![image](python_install.png)
+  - Please install python first as much as possible, because python have many installed tool and library like pip
+
+4. [openvibe](http://openvibe.inria.fr/downloads/)
   
-  5. python Library installation<br>
-  
-    ```pip install -r requirements.txt```<br>
-    
-     Type the following command in cmd<br>
-    ```
-    pip install pylsl
-    ```<br>
-    You can have cmd screen by typing "cmd" in windows search<br>
-     Or execute [install_python_library.bat](https://github.com/catagain/Real-time-Brainwave-Car-Controller/blob/main/install_python_library.bat)  file.
+5. python Library installation
+
+  ```
+  pip install -r requirements.txt
+  ```
    
-  6. file description<br>
-    - alpha_wave_bandpower.xml: code for openvibe<br>
-    - install_python_library.bat: install python library <br>
-    - mind_controlled_car.py: collect data from openvibe and send commend to car<br>
-    - test_car.py: just for testing, you can use key board to test your car functionality<br>
+6. file description
+    - alpha_wave_bandpower.xml: code for openvibe
+    - install_python_library.bat: install python library
+    - mind_controlled_car.py: collect data from openvibe and send commend to car
+    - test_car.py: just for testing, you can use key board to test your car functionality
     
 ## 
