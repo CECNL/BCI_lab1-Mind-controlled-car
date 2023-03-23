@@ -22,7 +22,6 @@
    
 6. file description
     - alpha_wave_bandpower.xml: code for openvibe
-    - install_python_library.bat: install python library
     - mind_controlled_car.py: collect data from openvibe and send commend to car
     - test_car.py: just for testing, you can use key board to test your car functionality
     
