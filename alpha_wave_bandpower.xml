@@ -1,7 +1,7 @@
 <OpenViBE-Scenario>
 	<FormatVersion>2</FormatVersion>
 	<Creator>OpenViBE Designer</Creator>
-	<CreatorVersion>3.3.1</CreatorVersion>
+	<CreatorVersion>3.4.0</CreatorVersion>
 	<Settings></Settings>
 	<Inputs></Inputs>
 	<Outputs></Outputs>
@@ -1133,7 +1133,7 @@
 					<TypeIdentifier>(0x79a9edeb, 0x245d83fc)</TypeIdentifier>
 					<Name>Equation</Name>
 					<DefaultValue>x</DefaultValue>
-					<Value>(C/(A+B+C+D))-0.25</Value>
+					<Value>(C/(A+B+C+D))</Value>
 					<Modifiability>false</Modifiability>
 				</Setting>
 			</Settings>

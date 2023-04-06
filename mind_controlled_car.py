@@ -1,59 +1,48 @@
-import queue
-from pylsl import StreamInlet, resolve_stream
+from pylsl import resolve_stream
+from pylsl import StreamInlet
+# import numpy as np
 import serial
+import queue
 import time
 
-#### Must be change to suitable port [Bluetooth Outgoing]
-ser = serial.Serial("COM4", 9600, timeout = 1)
+thres = 0.0  # threshold
+qsize = 30   # max queue size
 
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="CECNL BCI 2023 Car Demo")
+    parser.add_argument("port_num", type=str, help="Arduino bluetooth serial port")
+    args = parser.parse_args()
 
+    ser = serial.Serial(args.port_num, 9600, timeout=1, write_timeout=1)
 
+    q = queue.Queue(maxsize=qsize)
 
-"""Example program to show how to read a multi-channel time series from LSL."""
+    streams = resolve_stream('name', 'OpenViBE Stream1')
+    # create a new inlet to read from the stream
+    inlet = StreamInlet(streams[0])
 
+    while True:
+        sample, timestamp = inlet.pull_chunk()
+        if timestamp:
+            sample = sample[0][0]
+            # print(sample)  # find fish
+            while q.qsize() >= qsize:
+                _ = q.get()
+            q.put(sample)
 
-queue_len = 15
-q = queue.Queue(maxsize = queue_len)
+            ratio = sum(list(q.queue)) / q.qsize()
 
-
-
-threshhold = 0.0
-# first resolve DATA from openvibe
-print("looking for an openvibe stream...")
-streams = resolve_stream('name', 'OpenViBE Stream1')
-# create a new inlet to read from the stream
-inlet = StreamInlet(streams[0])
-
-
-while True:
-    # get a new sample (you can also omit the timestamp part if you're not
-    # interested in it)
-    time.sleep(0.2)
-    sample, timestamp = inlet.pull_chunk() 
-    if timestamp:
-#         print(sample[0][0])
-        
-
-        tmp = sample[0][0]
-
-        if q.qsize()<queue_len:
-            q.put(tmp)
-        else:
-            _ = q.get()
-            q.put(tmp)
-
-
-        ratio = (sum(list(q.queue))/len(list(q.queue)))
-
-
-        if ratio > threshhold and len(list(q.queue)) == queue_len:
-            print("move forward",ratio)
-            ser.write(b'1')
-
-        elif ratio < threshhold:
-            print("stop ",ratio)
-            ser.write(b'0')
-
-        
-        
-        
+            if ratio > thres and q.qsize() == qsize:
+                print("move forward", ratio)
+                ser.write(b'1')
+            else:
+                print("stop ", ratio)
+                ser.write(b'0')
+        time.sleep(0.2)
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print()
+        exit(0)
