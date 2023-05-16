@@ -4,7 +4,7 @@
 
 1. computer with windows OS(cygnus can only be run on windows OS)
 
-2. [cygnus](https://drive.google.com/file/d/1sH7X4EFP8hUWEHtPcJr0E_8npi1PI3sR/view)
+2. [cygnus](https://drive.google.com/file/d/1QtH87EDainHOh1VKMgqJFlTcPCxkgQ9C/view?usp=sharing)
 
 
 3. [Python3 - Anaconda](https://www.anaconda.com/products/distribution)
