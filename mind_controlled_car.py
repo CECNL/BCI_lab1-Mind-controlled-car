@@ -1,4 +1,4 @@
-from pylsl import resolve_stream
+from pylsl import resolve_byprop
 from pylsl import StreamInlet
 # import numpy as np
 import serial
@@ -18,7 +18,7 @@ def main():
 
     q = queue.Queue(maxsize=qsize)
 
-    streams = resolve_stream('name', 'OpenViBE Stream1')
+    streams = resolve_byprop('name', 'OpenViBE Stream1')
     # create a new inlet to read from the stream
     inlet = StreamInlet(streams[0])
 
